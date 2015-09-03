@@ -27,7 +27,7 @@ apply plugin: 'spring-boot'
 
 
 jar {
-    baseName = 'hack.ether.camp' 
+    baseName = 'price-feed.ether.camp' 
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
