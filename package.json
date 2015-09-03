@@ -4,6 +4,9 @@
   "name": "price-feed.ether.camp",
   "description": "Any development of spring/angular can start here",
   "license": "MIT",
+  "engines" : {
+	"node" : "0.10.X"
+  },
   "devDependencies": {
     "karma": "^0.12.16",
     "karma-chrome-launcher": "^0.1.4",

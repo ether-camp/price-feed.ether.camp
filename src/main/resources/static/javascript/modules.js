@@ -85,13 +85,13 @@ mainApp.service('CalcService', function(MathService){
 		$scope.feedTableData = [
 			{'symbol' : 'USDT_ETH', 'name':'ETH/USD', 'price' : '0', 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'BTC_ETH', 'name':'BTC/ETH', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
-			//{'symbol' : 'USD_BTC', 'name':'USD/BTC', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
+			{'symbol' : 'USDT_BTC', 'name':'USD/BTC', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 
 			{'symbol' : 'EURUSD', 'name':'EUR/USD', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'GBPUSD', 'name':'GBP/USD', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'USDJPY', 'name':'USD/JPY', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 
-			//{'symbol' : 'GLD', 'name':'Gold', 'price' : '0' , 'timestamp' : '0', 'denom' : '100000'},
+			{'symbol' : 'GLD', 'name':'Gold', 'price' : '0' , 'timestamp' : '0', 'denom' : '100000'},
 			{'symbol' : 'SP500', 'name':'S&P_500', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'NASDAQ', 'name':'NASDAQ', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 		
