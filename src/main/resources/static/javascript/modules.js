@@ -91,7 +91,8 @@ mainApp.service('CalcService', function(MathService){
 			{'symbol' : 'GBPUSD', 'name':'GBP/USD', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'USDJPY', 'name':'USD/JPY', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 
-			{'symbol' : 'GLD', 'name':'Gold', 'price' : '0' , 'timestamp' : '0', 'denom' : '100000'},
+			{'symbol' : 'XAUUSD', 'name':'Gold', 'price' : '0' , 'timestamp' : '0', 'denom' : '100000'},
+			{'symbol' : 'XAGUSD', 'name':'Silver', 'price' : '0' , 'timestamp' : '0', 'denom' : '100000'},
 			{'symbol' : 'SP500', 'name':'S&P_500', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'NASDAQ', 'name':'NASDAQ', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 		
