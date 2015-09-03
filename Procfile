@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -jar build/libs/price-feed.ether.camp.jar --server.port=$PORT

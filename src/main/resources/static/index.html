@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <title>PriceFeed</title>
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+		<!--link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'-->
+		<!--link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'-->
+
+		<!--link rel="stylesheet" href="css/main.css"-->
+		<link rel="icon" href="favicon.ico">
+
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+
+		<!--
+			<script src="javascript/app.js"></script>
+			<script src="javascript/controllers.js"></script>
+			<script src="javascript/services.js"></script>
+			<script src="javascript/filters.js"></script>
+			<script src="javascript/animations.js"></script>
+		-->
+		
+
+		<script src="bower_components/bignumber.js/bignumber.js"></script>		
+		<script src="bower_components/web3/dist/web3-light.js"></script>	
+
+			<script src="javascript/modules.js"> </script>
+
+	
+		<!--[if IE]>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<link rel="SHORTCUT ICON" href="favicon.ico"/>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		
+		<style>
+			.datagrid  { border-collapse: collapse; text-align: right; width: 400px; } 
+			.datagrid  td{ padding: 5px 10px; }, 
+			.datagrid  th { padding: 7px 10px; }
+			.datagrid td { color: #00496B; border-left: 0px solid #E1EEF4;font-size: 12px;font-weight: normal; }
+			.datagrid .alt td { background: #E1EEF4; color: #00496B; }
+			.left { text-align: left; }
+			
+			.datagrid td:first-child { border-left: none; }
+			.datagrid tr:last-child td { border-bottom: none; }		
+			.datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; }
+			
+			a {font-weight: normal;  color: #000000; text-decoration: underline;  }
+		</style>
+    </head>
+
+	<body ng-app="mainApp">	
+
+		</br></br></br></br>
+<center>		
+
+		<!-- 1. TODO ADD OG:IMAGE AND TITLE -->
+
+	   <h3><u>Ethereum Price Feed  </u></h3>
+	   
+	   <div ng-app="mainApp" ng-controller="CalcController">
+		  
+	   
+		   <table class="datagrid">
+				<tr  ng-repeat="rowData in feedTableData"> 
+				
+					<td class="left">
+								{{rowData.name}}
+					</td>
+					
+					<td>
+								{{rowData.price}}
+					</td>							
+					
+					<td>
+								{{rowData.timestamp}}
+					</td>							
+					
+				</tr>	     
+		   </table>
+		   
+		     <br/>
+			 <a href="http://frontier.ether.camp/account/{{contract}}"  target="_blank"> price feed contract: {{contract | limitTo: 10}} </a>
+	   </div>
+	   
+</center>	   
+	</body>
+</html>
