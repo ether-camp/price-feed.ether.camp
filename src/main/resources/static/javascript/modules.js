@@ -13,7 +13,7 @@
  mainApp.factory('AssetService', function() {     
 	 var factory = {};  
 	 
-	 factory.price = function(symbol) {
+	 factory.price = function(symbol, callback) {
 	 
 			var web3 = require('web3');
 			web3.setProvider(new web3.providers.HttpProvider('http://frontier-2.ether.camp:8082'));	
@@ -28,12 +28,10 @@
 			var PriceFeed = web3.eth.contract(priceFeedAbi).at(pfAddress);
 			
 			// GLD // USDT_ETH //  USDT_BTC // EURUSD // SP500
-			var price = PriceFeed.getPrice.call(symbol);
-						 	 
-			return price;
+			PriceFeed.getPrice.call(symbol, callback);						 	 		
 	 }
 	 
-	 factory.timestamp = function(symbol) {
+	 factory.timestamp = function(symbol, callback) {
 	 
 			var web3 = require('web3');
 			web3.setProvider(new web3.providers.HttpProvider('http://frontier-2.ether.camp:8082'));	
@@ -48,10 +46,8 @@
 			var PriceFeed = web3.eth.contract(priceFeedAbi).at(pfAddress);
 			
 			// GLD // USDT_ETH //  USDT_BTC // EURUSD // SP500
-			var timestamp = PriceFeed.getTimestamp.call(symbol);
-					
-			return timestamp;
-	 }
+			PriceFeed.getTimestamp.call(symbol, callback);
+	}
 	 
 	 factory.contract = function(symbol) {
 	 
@@ -115,12 +111,30 @@ mainApp.service('CalcService', function(MathService){
 		$scope.updateAll = function() {
 		
 			for (var row in $scope.feedTableData){
+						
 			
-			    var price = AssetService.price($scope.feedTableData[row].symbol) / $scope.feedTableData[row].denom;
-			    $scope.feedTableData[row].price = price;			
-			    
-				var timestamp = AssetService.timestamp($scope.feedTableData[row].symbol);
-				$scope.feedTableData[row].timestamp = timeSince(timestamp) + " ago";
+				(function(row_idx){	   
+					AssetService.price($scope.feedTableData[row_idx].symbol, function(err, result){
+					
+						var price = result / $scope.feedTableData[row_idx].denom;
+						
+						$scope.$apply(function(){
+							$scope.feedTableData[row_idx].price = price;																	
+						});
+						
+					});	  
+
+					AssetService.timestamp($scope.feedTableData[row_idx].symbol, function(err, result){
+					
+						var timestamp = result;
+						
+						$scope.$apply(function(){
+							$scope.feedTableData[row_idx].timestamp = timeSince(timestamp) + " ago";
+						});
+						
+					});	  
+				
+				})(row);
 				
 			}		
 									
