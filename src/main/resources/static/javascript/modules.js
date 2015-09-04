@@ -91,9 +91,10 @@ mainApp.service('CalcService', function(MathService){
 			{'symbol' : 'GBPUSD', 'name':'GBP/USD', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'USDJPY', 'name':'USD/JPY', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 
-			{'symbol' : 'XAUUSD', 'name':'Gold', 'price' : '0' , 'timestamp' : '0', 'denom' : '100000'},
-			{'symbol' : 'XAGUSD', 'name':'Silver', 'price' : '0' , 'timestamp' : '0', 'denom' : '100000'},
-			{'symbol' : 'SP500', 'name':'S&P_500', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
+			{'symbol' : 'XAUUSD', 'name':'Gold', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
+			{'symbol' : 'XAGUSD', 'name':'Silver', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
+			
+			{'symbol' : 'SP500', 'name':'S&P 500', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			{'symbol' : 'NASDAQ', 'name':'NASDAQ', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 		
   	 	    {'symbol' : 'AAPL', 'name':'Apple', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
@@ -101,9 +102,9 @@ mainApp.service('CalcService', function(MathService){
   	 	    {'symbol' : 'MSFT', 'name':'Microsoft', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
   	 	    {'symbol' : 'GM', 'name':'General Motors', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
   	 	    {'symbol' : 'GE', 'name':'General Electric', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
-  	 	    {'symbol' : 'WMT', 'name':'WallMart', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
+  	 	    {'symbol' : 'WMT', 'name':'Wall Mart', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 
-  	 	    {'symbol' : 'F', 'name':'For Motor', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
+  	 	    {'symbol' : 'F', 'name':'Ford Motor', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
   	 	    {'symbol' : 'T', 'name':'AT&T', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 			
     
