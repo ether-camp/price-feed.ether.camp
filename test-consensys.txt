@@ -8,6 +8,7 @@
  0x5c3b947d4ec2b9818fce862f84cbe95a79589061  [cristof]
  0x7336d9aa4bc13d68a1eefe75e8f00b09b6232152  [ajunge]
  0x26ac60acb581516b175010730a2bcee041bb0099  [connor]
+ 0x3e6d543ec5c3713969dc0aae54cd5cbc7d913b49  [daniel]
  
  
 con:faucet

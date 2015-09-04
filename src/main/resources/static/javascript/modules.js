@@ -22,13 +22,13 @@
   		    var nrAddress = "0x985509582b2c38010bfaa3c8d2be60022d3d00da";
 			var Namereg = web3.eth.contract(nameRegAbi).at(nrAddress);
 			
-			var pfAddress = Namereg.addressOf.call("ether-camp/price-feed");
-            
-			var priceFeedAbi = [{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getPrice","outputs":[{"name":"currPrice","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getTimestamp","outputs":[{"name":"timestamp","type":"uint256"}],"type":"function"}];
-			var PriceFeed = web3.eth.contract(priceFeedAbi).at(pfAddress);
-			
-			// GLD // USDT_ETH //  USDT_BTC // EURUSD // SP500
-			PriceFeed.getPrice.call(symbol, callback);						 	 		
+			Namereg.addressOf.call("ether-camp/price-feed", function(err, pfAddress){            
+				var priceFeedAbi = [{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getPrice","outputs":[{"name":"currPrice","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getTimestamp","outputs":[{"name":"timestamp","type":"uint256"}],"type":"function"}];
+				var PriceFeed = web3.eth.contract(priceFeedAbi).at(pfAddress);
+				
+				// GLD // USDT_ETH //  USDT_BTC // EURUSD // SP500
+				PriceFeed.getPrice.call(symbol, callback);						 	 		
+			});
 	 }
 	 
 	 factory.timestamp = function(symbol, callback) {
@@ -40,16 +40,16 @@
   		    var nrAddress = "0x985509582b2c38010bfaa3c8d2be60022d3d00da";
 			var Namereg = web3.eth.contract(nameRegAbi).at(nrAddress);
 			
-			var pfAddress = Namereg.addressOf.call("ether-camp/price-feed");
-            
-			var priceFeedAbi = [{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getPrice","outputs":[{"name":"currPrice","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getTimestamp","outputs":[{"name":"timestamp","type":"uint256"}],"type":"function"}];
-			var PriceFeed = web3.eth.contract(priceFeedAbi).at(pfAddress);
+			Namereg.addressOf.call("ether-camp/price-feed", function(err, pfAddress){
 			
-			// GLD // USDT_ETH //  USDT_BTC // EURUSD // SP500
-			PriceFeed.getTimestamp.call(symbol, callback);
+				var priceFeedAbi = [{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getPrice","outputs":[{"name":"currPrice","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"symbol","type":"bytes32"}],"name":"getTimestamp","outputs":[{"name":"timestamp","type":"uint256"}],"type":"function"}];
+				var PriceFeed = web3.eth.contract(priceFeedAbi).at(pfAddress);				
+				PriceFeed.getTimestamp.call(symbol, callback);
+			
+			});            
 	}
 	 
-	 factory.contract = function(symbol) {
+	 factory.contract = function(callback) {
 	 
 			var web3 = require('web3');
 			web3.setProvider(new web3.providers.HttpProvider('http://frontier-2.ether.camp:8082'));	
@@ -58,9 +58,7 @@
   		    var nrAddress = "0x985509582b2c38010bfaa3c8d2be60022d3d00da";
 			var Namereg = web3.eth.contract(nameRegAbi).at(nrAddress);
 			
-			var pfAddress = Namereg.addressOf.call("ether-camp/price-feed");
-            					
-			return pfAddress;
+			Namereg.addressOf.call("ether-camp/price-feed", callback);
 	 }
 	 
 	 
@@ -140,9 +138,15 @@ mainApp.service('CalcService', function(MathService){
 									
 		}
 		
-		$scope.contract = AssetService.contract();
+		AssetService.contract(function(err, result){
+
+			$scope.$apply(function(){
+				$scope.contract = result;
+			});				
+		});
+		
 		$scope.updateAll();
-		$interval($scope.updateAll, 10000);
+		$interval($scope.updateAll, 1000);
 		
 });
 
