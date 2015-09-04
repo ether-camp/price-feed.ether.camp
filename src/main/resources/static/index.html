@@ -6,38 +6,25 @@
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-		<!--link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'-->
-		<!--link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'-->
-
+		<meta property="og:image" content="http://i.imgur.com/Ep9iI3j.png">
+		
+		
 		<!--link rel="stylesheet" href="css/main.css"-->
 		<link rel="icon" href="favicon.ico">
 
-		<script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="bower_components/angular-resource/angular-resource.js"></script>
-		<script src="bower_components/angular-animate/angular-animate.js"></script>
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-
-		<!--
-			<script src="javascript/app.js"></script>
-			<script src="javascript/controllers.js"></script>
-			<script src="javascript/services.js"></script>
-			<script src="javascript/filters.js"></script>
-			<script src="javascript/animations.js"></script>
-		-->
+		<script type="text/javascript"  src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript"  src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript"  src="bower_components/angular-resource/angular-resource.js"></script>
+		<script type="text/javascript"  src="bower_components/angular-animate/angular-animate.js"></script>
+		<script type="text/javascript"  src="bower_components/jquery/dist/jquery.js"></script>
 		
 
-		<script src="bower_components/bignumber.js/bignumber.js"></script>		
-		<script src="bower_components/web3/dist/web3-light.js"></script>	
+		<script type="text/javascript"  src="bower_components/bignumber.js/bignumber.js"></script>		
+		<script type="text/javascript"  src="bower_components/web3/dist/web3-light.js"></script>	
 
-			<script src="javascript/modules.js"> </script>
+		<script type="text/javascript" src="javascript/modules.js"> </script>
 
 	
-		<!--[if IE]>
-			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-			<link rel="SHORTCUT ICON" href="favicon.ico"/>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 		
 		
 		<style>
@@ -53,16 +40,25 @@
 			.datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; }
 			
 			a {font-weight: normal;  color: #000000; text-decoration: underline;  }
+
+			.ask-us-badge {
+				position: fixed;
+				bottom: 7%;
+				right: 1.5%;
+				background: #f9f9f9;
+				padding: 5px 10px;
+				font-size: 14px;
+			}
+						
 		</style>
     </head>
 
 	<body ng-app="mainApp">	
 
 		</br></br></br></br>
-<center>		
+	<center>		
 
-		<!-- 1. TODO ADD OG:IMAGE AND TITLE -->
-
+	
 	   <h3><u>Ethereum Price Feed  </u></h3>
 	   
 	   <div ng-app="mainApp" ng-controller="CalcController">
@@ -91,5 +87,9 @@
 	   </div>
 	   
 </center>	   
+
+<div class="ask-us-badge">
+        <a href="https://gitter.im/ethereum/ethereumj" target="_blank">ask us anything</a>
+</div>
 	</body>
 </html>

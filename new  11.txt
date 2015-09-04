@@ -1,0 +1,12 @@
+.ask-us-badge {
+    position: fixed;
+    bottom: 7%;
+    right: 1.5%;
+    background: #f9f9f9;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+<div class="ask-us-badge">
+        <a href="https://gitter.im/ethereum/ethereumj" target="_blank">ask us anything</a>
+    </div>
