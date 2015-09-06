@@ -152,7 +152,7 @@ mainApp.service('CalcService', function(MathService){
 		});
 		
 		$scope.updateAll();
-		$interval($scope.updateAll, 100);
+		$interval($scope.updateAll, 5000);
 		
 });
 
