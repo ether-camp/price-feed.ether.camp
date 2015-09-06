@@ -102,7 +102,7 @@ mainApp.service('CalcService', function(MathService){
   	 	    {'symbol' : 'MSFT', 'name':'Microsoft', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
   	 	    {'symbol' : 'GM', 'name':'General Motors', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
   	 	    {'symbol' : 'GE', 'name':'General Electric', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
-  	 	    {'symbol' : 'WMT', 'name':'Wall Mart', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
+  	 	    {'symbol' : 'WMT', 'name':'Walmart', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
 
   	 	    {'symbol' : 'F', 'name':'Ford Motor', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},
   	 	    {'symbol' : 'T', 'name':'AT&T', 'price' : '0' , 'timestamp' : '0', 'denom' : '1000000'},

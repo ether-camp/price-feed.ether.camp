@@ -27,3 +27,4 @@ roman:test
 new:
     0x589df60674c2b8a290d1603bce19134bef00b7ed [jeffscottward]
 	0x5011d782860bc428c3928672e057120064295769 [kobigurk]
+	ea8cae0ea58fe8cb92e8c6ecba5972b613d7d6ee   [stefan.george]
