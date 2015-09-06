@@ -1,5 +1,11 @@
+
+
+
  var mainApp = angular.module("mainApp", []);
 
+ mainApp.run(function($rootScope) {
+	$rootScope.web3_provider = 'http://frontier-lb.ether.camp';
+  });
 
  mainApp.factory('MathService', function() {     
 	 var factory = {};  
@@ -10,13 +16,13 @@
   }); 
 	  
 
- mainApp.factory('AssetService', function() {     
+ mainApp.factory('AssetService', function($rootScope) {     
 	 var factory = {};  
 	 
 	 factory.price = function(symbol, callback) {
 	 
 			var web3 = require('web3');
-			web3.setProvider(new web3.providers.HttpProvider('http://frontier-2.ether.camp:8082'));	
+			web3.setProvider(new web3.providers.HttpProvider($rootScope.web3_provider));	
 			
 			var nameRegAbi = [{"constant":true,"inputs":[{"name":"name","type":"bytes32"}],"name":"addressOf","outputs":[{"name":"addr","type":"address"}],"type":"function"}];
   		    var nrAddress = "0x985509582b2c38010bfaa3c8d2be60022d3d00da";
@@ -34,7 +40,7 @@
 	 factory.timestamp = function(symbol, callback) {
 	 
 			var web3 = require('web3');
-			web3.setProvider(new web3.providers.HttpProvider('http://frontier-2.ether.camp:8082'));	
+			web3.setProvider(new web3.providers.HttpProvider($rootScope.web3_provider));	
 			
 			var nameRegAbi = [{"constant":true,"inputs":[{"name":"name","type":"bytes32"}],"name":"addressOf","outputs":[{"name":"addr","type":"address"}],"type":"function"}];
   		    var nrAddress = "0x985509582b2c38010bfaa3c8d2be60022d3d00da";
@@ -52,7 +58,7 @@
 	 factory.contract = function(callback) {
 	 
 			var web3 = require('web3');
-			web3.setProvider(new web3.providers.HttpProvider('http://frontier-2.ether.camp:8082'));	
+			web3.setProvider(new web3.providers.HttpProvider($rootScope.web3_provider));	
 			
 			var nameRegAbi = [{"constant":true,"inputs":[{"name":"name","type":"bytes32"}],"name":"addressOf","outputs":[{"name":"addr","type":"address"}],"type":"function"}];
   		    var nrAddress = "0x985509582b2c38010bfaa3c8d2be60022d3d00da";
@@ -146,7 +152,7 @@ mainApp.service('CalcService', function(MathService){
 		});
 		
 		$scope.updateAll();
-		$interval($scope.updateAll, 1000);
+		$interval($scope.updateAll, 60000);
 		
 });
 
